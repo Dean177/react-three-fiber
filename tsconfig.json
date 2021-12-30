@@ -15,5 +15,5 @@
     "noImplicitThis": false,
     "baseUrl": "./"
   },
-  "include": ["packages/*/src/**/*"]
+  "include": ["src/**/*"]
 }

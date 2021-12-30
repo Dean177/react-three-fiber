@@ -1,6 +1,5 @@
 node_modules/
 coverage/
-dist/
 build/
 types/
 # commit types in src
@@ -13,7 +12,6 @@ $RECYCLE.BIN/
 .vscode
 .docz/
 package-lock.json
-coverage/
 .idea
 yarn-error.log
 .size-snapshot.json
