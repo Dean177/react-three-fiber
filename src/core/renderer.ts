@@ -19,7 +19,8 @@ import {
 import { RootState } from './store'
 import { EventHandlers, removeInteractivity } from './events'
 
-export type Root = { fiber: Reconciler.FiberRoot; store: UseStore<RootState> }
+// @ts-ignore
+export type Root = { fiber: any; store: UseStore<RootState> }
 
 export type LocalState = {
   root: UseStore<RootState>
@@ -88,6 +89,7 @@ function createRenderer<TCanvas>(roots: Map<TCanvas, Root>, getEventPriority?: (
     { args = [], attach, ...props }: InstanceProps,
     root: UseStore<RootState> | Instance,
     hostContext?: any,
+    // @ts-ignore
     internalInstanceHandle?: Reconciler.Fiber,
   ) {
     let name = `${type[0].toUpperCase()}${type.slice(1)}`
@@ -97,6 +99,7 @@ function createRenderer<TCanvas>(roots: Map<TCanvas, Root>, getEventPriority?: (
     // Portals do not give us a root, they are themselves treated as a root by the reconciler
     // In order to figure out the actual root we have to climb through fiber internals :(
     if (!isStore(root) && internalInstanceHandle) {
+      // @ts-ignore
       const fn = (node: Reconciler.Fiber): UseStore<RootState> => {
         if (!node.return) return node.stateNode && node.stateNode.containerInfo
         else return fn(node.return)
@@ -250,7 +253,7 @@ function createRenderer<TCanvas>(roots: Map<TCanvas, Root>, getEventPriority?: (
     }
   }
 
-  function switchInstance(instance: Instance, type: string, newProps: InstanceProps, fiber: Reconciler.Fiber) {
+  function switchInstance(instance: Instance, type: string, newProps: InstanceProps, fiber: any) {
     const parent = instance.__r3f?.parent
     if (!parent) return
 
@@ -279,6 +282,7 @@ function createRenderer<TCanvas>(roots: Map<TCanvas, Root>, getEventPriority?: (
         fiber.stateNode = newInstance
         if (fiber.ref) {
           if (typeof fiber.ref === 'function') (fiber as unknown as any).ref(newInstance)
+          // @ts-ignore
           else (fiber.ref as Reconciler.RefObject).current = newInstance
         }
       }
@@ -323,6 +327,7 @@ function createRenderer<TCanvas>(roots: Map<TCanvas, Root>, getEventPriority?: (
       type: string,
       oldProps: InstanceProps,
       newProps: InstanceProps,
+      // @ts-ignore
       fiber: Reconciler.Fiber,
     ) {
       // Reconstruct when args or <primitive object={...} have changes

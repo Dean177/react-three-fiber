@@ -186,7 +186,8 @@ function diffProps(instance, {
     for (let i = 0; i < previousKeys.length; i++) {
       if (!props.hasOwnProperty(previousKeys[i])) entries.unshift([previousKeys[i], DEFAULT + 'remove']);
     }
-  }
+  } // @ts-ignore
+
 
   entries.forEach(([key, value]) => {
     var _instance$__r3f2;
@@ -749,6 +750,8 @@ function createEvents(store) {
   };
 }
 
+// @ts-ignore
+
 // Type guard to tell a store from a portal
 const isStore = def => def && !!def.getState;
 
@@ -777,13 +780,15 @@ function createRenderer(roots, getEventPriority) {
     args = [],
     attach,
     ...props
-  }, root, hostContext, internalInstanceHandle) {
+  }, root, hostContext, // @ts-ignore
+  internalInstanceHandle) {
     let name = `${type[0].toUpperCase()}${type.slice(1)}`;
     let instance; // https://github.com/facebook/react/issues/17147
     // Portals do not give us a root, they are themselves treated as a root by the reconciler
     // In order to figure out the actual root we have to climb through fiber internals :(
 
     if (!isStore(root) && internalInstanceHandle) {
+      // @ts-ignore
       const fn = node => {
         if (!node.return) return node.stateNode && node.stateNode.containerInfo;else return fn(node.return);
       };
@@ -979,7 +984,8 @@ function createRenderer(roots, getEventPriority) {
         fiber.stateNode = newInstance;
 
         if (fiber.ref) {
-          if (typeof fiber.ref === 'function') fiber.ref(newInstance);else fiber.ref.current = newInstance;
+          if (typeof fiber.ref === 'function') fiber.ref(newInstance); // @ts-ignore
+          else fiber.ref.current = newInstance;
         }
       }
     });
@@ -1025,7 +1031,8 @@ function createRenderer(roots, getEventPriority) {
       }
     },
 
-    commitUpdate(instance, [reconstruct, diff], type, oldProps, newProps, fiber) {
+    commitUpdate(instance, [reconstruct, diff], type, oldProps, newProps, // @ts-ignore
+    fiber) {
       // Reconstruct when args or <primitive object={...} have changes
       if (reconstruct) switchInstance(instance, type, newProps, fiber); // Otherwise just overwrite props
       else applyProps$1(instance, diff);

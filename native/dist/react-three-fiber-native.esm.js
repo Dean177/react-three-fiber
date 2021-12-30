@@ -1,5 +1,5 @@
-import { z as buildGraph, A as is, c as createEvents, e as extend, p as pick, o as omit, a as createRoot, u as unmountComponentAtNode } from '../../dist/index-09b06af8.esm.js';
-export { t as ReactThreeFiber, y as _roots, x as act, v as addAfterEffect, s as addEffect, w as addTail, q as advance, l as applyProps, i as context, j as createPortal, a as createRoot, m as dispose, e as extend, n as invalidate, k as reconciler, r as render, u as unmountComponentAtNode, f as useFrame, g as useGraph, b as useStore, d as useThree } from '../../dist/index-09b06af8.esm.js';
+import { z as buildGraph, A as is, c as createEvents, e as extend, p as pick, o as omit, a as createRoot, u as unmountComponentAtNode } from '../../dist/index-b402fcb6.esm.js';
+export { t as ReactThreeFiber, y as _roots, x as act, v as addAfterEffect, s as addEffect, w as addTail, q as advance, l as applyProps, i as context, j as createPortal, a as createRoot, m as dispose, e as extend, n as invalidate, k as reconciler, r as render, u as unmountComponentAtNode, f as useFrame, g as useGraph, b as useStore, d as useThree } from '../../dist/index-b402fcb6.esm.js';
 import * as THREE from 'three';
 import { Asset } from 'expo-asset';
 import { readAsStringAsync } from 'expo-file-system';

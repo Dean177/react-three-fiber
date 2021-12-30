@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var index = require('../../dist/index-ba1a0daa.cjs.dev.js');
+var index = require('../../dist/index-76d1e01e.cjs.dev.js');
 var THREE = require('three');
 var expoAsset = require('expo-asset');
 var expoFileSystem = require('expo-file-system');

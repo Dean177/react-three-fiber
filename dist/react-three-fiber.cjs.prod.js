@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var index = require('./index-75b3af94.cjs.prod.js');
+var index = require('./index-d05fc587.cjs.prod.js');
 var _extends = require('@babel/runtime/helpers/extends');
 var React = require('react');
 var THREE = require('three');

@@ -1,5 +1,5 @@
-import { c as createEvents, e as extend, p as pick, o as omit, a as createRoot, u as unmountComponentAtNode } from './index-09b06af8.esm.js';
-export { t as ReactThreeFiber, y as _roots, x as act, v as addAfterEffect, s as addEffect, w as addTail, q as advance, l as applyProps, i as context, j as createPortal, a as createRoot, m as dispose, e as extend, n as invalidate, k as reconciler, r as render, u as unmountComponentAtNode, f as useFrame, g as useGraph, h as useLoader, b as useStore, d as useThree } from './index-09b06af8.esm.js';
+import { c as createEvents, e as extend, p as pick, o as omit, a as createRoot, u as unmountComponentAtNode } from './index-b402fcb6.esm.js';
+export { t as ReactThreeFiber, y as _roots, x as act, v as addAfterEffect, s as addEffect, w as addTail, q as advance, l as applyProps, i as context, j as createPortal, a as createRoot, m as dispose, e as extend, n as invalidate, k as reconciler, r as render, u as unmountComponentAtNode, f as useFrame, g as useGraph, h as useLoader, b as useStore, d as useThree } from './index-b402fcb6.esm.js';
 import _extends from '@babel/runtime/helpers/esm/extends';
 import * as React from 'react';
 import * as THREE from 'three';
